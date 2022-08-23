@@ -15,7 +15,7 @@ export const load = async() => {
 
 
 const loadVariables = async (contractFTS) => {
-    const admin = "0xf361eC759e85107Eca4C743e59E624cC4382745d";
+    const admin = "0x1868973E6aBc5Da86274BFDB95574c1854C37A84";
     const ethFunds = await window.web3.eth.getBalance(admin);
 
     const tCount = await contractFTS.transactionCount();

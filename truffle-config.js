@@ -1,16 +1,11 @@
 require('dotenv').config()
 const HDWalletProvider = require('truffle-hdwallet-provider')
-const TESTKEY = process.env.TESTKEY
-const PRODKEY = process.env.PRODKEY
+const PRIVATE_KEY_TEST = process.env.PRIVATE_KEY_TEST
+const PRIVATE_KEY_PROD = process.env.PRIVATE_KEY_PROD
 const BSC_TESTNET_URL = process.env.BSC_TESTNET_URL
 const BSC_MAINNET_URL = process.env.BSC_MAINNET_URL
 
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
-const privateKeys = [
-  'af8b039bad5aba2faa98e898a66811a1cf6ef6821fbe91b655ce488f605de90c',
-  '7a33b8a9f7e6021ce71b04fd5a46a9ac17d1d4a3af098919ac291633f078ec17'
-];
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -73,14 +68,14 @@ module.exports = {
 
 
     bsc_testnet: {
-      provider: () => new HDWalletProvider(TESTKEY, BSC_TESTNET_URL),
+      provider: () => new HDWalletProvider(PRIVATE_KEY_TEST, BSC_TESTNET_URL),
       network_id: 97,
       confirmations: 10,
       timeoutBlocks: 200,
       skipDryRun: true
     },
     bsc_mainnet: {
-      provider: () => new HDWalletProvider(PRODKEY, BSC_MAINNET_URL),
+      provider: () => new HDWalletProvider(PRIVATE_KEY_PROD, BSC_MAINNET_URL),
       network_id: 56,
       confirmations: 10,
       timeoutBlocks: 200,

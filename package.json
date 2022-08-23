@@ -16,11 +16,13 @@
     "@openzeppelin/contracts": "^4.7.3",
     "@truffle/contract": "^4.5.22",
     "@truffle/hdwallet-provider": "^2.0.14",
+    "assert": "^2.0.0",
     "dotenv": "^16.0.1",
     "framer-motion": "^4.1.17",
     "next": "^10.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.7.5"
   },
   "devDependencies": {
