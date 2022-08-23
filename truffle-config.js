@@ -1,3 +1,11 @@
+require('dotenv').config()
+const HDWalletProvider = require('truffle-hdwallet-provider')
+const TESTKEY = process.env.TESTKEY
+const PRODKEY = process.env.PRODKEY
+const BSC_TESTNET_URL = process.env.BSC_TESTNET_URL
+const BSC_MAINNET_URL = process.env.BSC_MAINNET_URL
+
+
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const privateKeys = [
   'af8b039bad5aba2faa98e898a66811a1cf6ef6821fbe91b655ce488f605de90c',
@@ -62,6 +70,23 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
+
+
+    bsc_testnet: {
+      provider: () => new HDWalletProvider(TESTKEY, BSC_TESTNET_URL),
+      network_id: 97,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    bsc_mainnet: {
+      provider: () => new HDWalletProvider(PRODKEY, BSC_MAINNET_URL),
+      network_id: 56,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+
     kovan: {
     provider: () => new HDWalletProvider({
       privateKeys: privateKeys,
